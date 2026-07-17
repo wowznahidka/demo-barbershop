@@ -95,6 +95,10 @@ nav.scrolled{
   transform:scale(1.05);
   transition:transform 8s ease;
 }
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+}
 .hero-bg::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(90deg, rgba(13,13,13,0.97) 40%, rgba(13,13,13,0.5) 70%, rgba(13,13,13,0.2) 100%);
@@ -512,7 +516,7 @@ footer p{font-size:12px;color:var(--gray2)}
 <meta name="twitter:description" content="Чоловічі стрижки та догляд від 350₴. Досвідчені барбери, онлайн-запис у Telegram.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=90&auto=format&fit=crop">
 <link rel="canonical" href="https://wowznahidka.github.io/demo-barbershop/">
-<meta name="description" content="Сайт для барбершопу: онлайн-запис у Telegram, цінник, майстри. Такий сайт для вашого бізнесу — від 2 500₴, за 3 дні.">
+<meta name="description" content="Чоловічі стрижки, борода та гоління у Києві. Досвідчені барбери, преміум догляд, онлайн-запис у Telegram. Від 250₴.">
 </head>
 <body>
 
@@ -543,13 +547,17 @@ footer p{font-size:12px;color:var(--gray2)}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="heroBg">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1400&q=85&auto=format&fit=crop">
+      <source src="https://videos.pexels.com/video-files/7697533/7697533-hd_1280_720_30fps.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-content">
-    <div class="hero-badge">Преміум барбершоп</div>
+    <div class="hero-badge">RAZOR BARBERSHOP · Преміум</div>
     <p class="hero-sub">Київ • з 2019</p>
     <h1>
-      RAZOR
-      <em>BARBERSHOP</em>
+      СТРИЖКА, ПІСЛЯ ЯКОЇ
+      <em>НЕ СОРОМНО НА ФОТО</em>
     </h1>
     <p>Чоловічі стрижки, борода та догляд. Тільки досвідчені майстри, преміум матеріали, результат якому ви довірятимете.</p>
     <div class="hero-btns">
@@ -962,7 +970,7 @@ renderCalendarB();
         </div>
         <div class="contact-item">
           <span class="contact-icon">📸</span>
-          <p><strong>Instagram</strong><br>@razor_barbershop_kyiv</p>
+          <p><strong>Instagram</strong><br><a href="#" aria-label="Instagram" style="color:var(--gold)">@razor_barbershop_kyiv</a></p>
         </div>
       </div>
     </div>
