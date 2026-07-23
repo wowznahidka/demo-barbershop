@@ -505,7 +505,10 @@ footer p{font-size:12px;color:var(--gray2)}
   .g:first-child{grid-column:auto}
   .hero-stats{gap:28px}
 }
-</style>
+
+    /* scroll progress */
+    #scroll-prog{position:fixed;top:0;left:0;height:2px;width:0%;background:#c9a84c;z-index:10000;transition:width .1s linear;pointer-events:none}
+    </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="RAZOR Barbershop — Стрижки у Києві | Запис онлайн">
 <meta property="og:description" content="Чоловічі стрижки та догляд від 350₴. Досвідчені барбери, онлайн-запис у Telegram.">
@@ -520,6 +523,7 @@ footer p{font-size:12px;color:var(--gray2)}
 <meta name="description" content="Чоловічі стрижки, борода та гоління у Києві. Досвідчені барбери, преміум догляд, онлайн-запис у Telegram. Від 250₴.">
 </head>
 <body>
+  <div id="scroll-prog" aria-hidden="true"></div>
 
 <nav id="nav">
   <a href="#" class="logo">RAZ<span>OR</span> <span style="font-size:14px;letter-spacing:2px;opacity:.6">KYIV</span></a>
@@ -1371,5 +1375,13 @@ fbq('trackCustom', 'DemoView', {demo: 'barbershop'});
 </script>
 <!-- /wow-demo-pixel -->
 
+  <script>
+  (function(){
+    var el=document.getElementById('scroll-prog');
+    if(!el)return;
+    function upd(){var d=document.documentElement,pct=(d.scrollTop||document.body.scrollTop)/(d.scrollHeight-d.clientHeight)*100;el.style.width=Math.min(100,pct)+'%'}
+    window.addEventListener('scroll',upd,{passive:true});
+  })();
+  </script>
 </body>
 </html>
